@@ -1,0 +1,24 @@
+<div class="container">
+  <h2 style="color: rgb(123, 147, 228);font-weight: bold;">Import Students</h2>
+
+  <!-- Display Messages -->
+  <div *ngIf="importError" class="alert alert-danger">{{ importError }}</div>
+  <div *ngIf="importMessage" class="alert alert-success">{{ importMessage }}</div>
+  <div *ngIf="exportError" class="alert alert-danger">{{ exportError }}</div>
+  <div *ngIf="exportMessage" class="alert alert-success">{{ exportMessage }}</div>
+
+  <!-- File Input for Import -->
+  <div class="form-group"style=" padding-top:10%;">
+    
+    <input type="file" accept=".csv" (change)="onFileSelected($event)" />
+  </div>
+
+  <!-- Import Button -->
+   <div style="padding-top:7%;padding-left: 5%;">
+     <button (click)="importStudents()" class="btn btn-success mt-2" [disabled]="!selectedFile" >
+    Import Students
+  </button>
+
+   </div>
+ 
+ 

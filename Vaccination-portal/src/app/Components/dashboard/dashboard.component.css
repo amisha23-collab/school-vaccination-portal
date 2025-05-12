@@ -1,0 +1,199 @@
+.dashboard-container {
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7fa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.dashboard-header h1 {
+  color: #2c3e50;
+  font-size: 2rem;
+}
+
+.dashboard-header button {
+  padding: 0.5rem 1rem;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dashboard-header button:hover {
+  background-color: #c0392b;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.stat:hover {
+  transform: translateY(-5px);
+}
+
+.stat h2 {
+  margin-bottom: 0.5rem;
+  color: #34495e;
+}
+
+.stat p {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+.upcoming-drives {
+  
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.upcoming-drives h2 {
+  margin-bottom: 1rem;
+  color: #2980b9;
+}
+
+.upcoming-drives ul {
+  list-style: none;
+  padding: 0;
+  margin-left:5%;
+  margin-right: 5%;
+}
+
+.upcoming-drives .drive-item {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: #ecf0f1;
+  border-radius: 10px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.upcoming-drives .drive-item:hover {
+  background-color: #bdc3c7;
+  transform: translateY(-5px);
+}
+
+.drive-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #3498db;
+}
+
+.drive-details {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+.dashboard-header button {
+  padding: 0.5rem 1rem;
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.dashboard-header button:hover {
+  background-color: #1f618d;
+}
+.sidenav-container {
+  height: 100vh;
+  display: flex;
+}
+
+.sidenav {
+  width: 290px;
+  background-color: #8572b1; /* Indigo primary */
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+}
+
+.navbar-header {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 1rem 0;
+  color: #ffffff;
+  border-bottom: 1px solid #4527a0;
+}
+
+mat-nav-list {
+  padding: 0;
+}
+
+mat-nav-list a {
+  color: #e0e0e0;
+  text-decoration: none;
+  padding: 12px 20px;
+  display: block;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-weight: 500;
+}
+
+mat-nav-list a:hover {
+  background-color: #927ad8; /* Slightly darker indigo */
+  color: #ffffff;
+}
+
+.dashboard-container {
+  flex-grow: 1;
+  background-color: #f4f7fa;
+  padding: 2rem;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.dashboard-header h1 {
+  font-size: 1.5rem;
+  color: #512da8;
+}
+
+.dashboard-header button {
+  background-color: #512da8;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.dashboard-header button:hover {
+  background-color: #4527a0;
+}
+
+
+ 

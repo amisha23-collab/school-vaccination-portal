@@ -1,0 +1,62 @@
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="side" opened class="sidenav">
+    <div class="navbar-header">
+      <h2 > Dashboard</h2>
+
+    </div>
+    <mat-nav-list>
+  <a mat-list-item routerLink="/profile" routerLinkActive="active-link">Profile</a>
+   <!-- Trigger for Student Management Menu -->
+  <a mat-list-item routerLink="/students" routerLinkActive="active-link">Student Management</a>
+  <a mat-list-item routerLink="/vaccine-drives" routerLinkActive="active-link">Vaccination Drives</a>
+  <a mat-list-item routerLink="/settings" routerLinkActive="active-link">Settings</a>
+  <a mat-list-item (click)="logout()">Logout</a>
+</mat-nav-list>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content class="dashboard-container">
+    <header class="dashboard-header">
+      <h1>Welcome, {{ username }}</h1>
+      <button (click)="logout()">Logout</button>
+    </header>
+
+    <router-outlet></router-outlet>
+    <!-- Stats Section -->
+    <section class="stats">
+      <div class="stat card">
+        <h2>Total Students</h2>
+        <p>{{ dashboardData?.totalStudents }}</p>
+      </div>
+      <div class="stat card">
+        <h2>Vaccinated Students</h2>
+        <p>{{ dashboardData?.vaccinatedStudents }}</p>
+      </div>
+      <div class="stat card">
+        <h2>Vaccination %</h2>
+        <p>{{ dashboardData?.vaccinationPercentage | number:'1.0-0' }}%</p>
+      </div>
+    </section>
+
+    <!-- Upcoming Vaccination Drives -->
+    <section *ngIf="hasUpcomingDrives" class="upcoming-drives">
+      <h2 style="text-align: center;">Upcoming Drives</h2>
+      <ul>
+        <li *ngFor="let drive of dashboardData.upcomingDrives" class="drive-item">
+          <div class="drive-title">
+            <strong>{{ drive.vaccineName }}</strong> - <span>{{ drive.date | date: 'shortDate' }}</span>
+          </div>
+          <div class="drive-details">
+            Available Doses: {{ drive.availableDoses }} | Applicable Classes: {{ drive.applicableClasses.join(', ') }}
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Empty State for Upcoming Drives -->
+    <section *ngIf="!hasUpcomingDrives" class="empty-state">
+      <p>No upcoming vaccination drives within the next 30 days.</p>
+    </section>
+  </mat-sidenav-content>
+</mat-sidenav-container>

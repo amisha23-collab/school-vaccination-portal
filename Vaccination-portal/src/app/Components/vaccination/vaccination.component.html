@@ -1,0 +1,54 @@
+<div class="container">
+  <h2>Vaccination Records</h2>
+
+  <!-- Success Message -->
+  <div *ngIf="successMessage" class="alert alert-success">
+    {{ successMessage }}
+  </div>
+
+  <!-- Error Message -->
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Vaccination Form -->
+  <form [formGroup]="vaccinationForm" (ngSubmit)="onVaccinate()">
+    <div class="form-group">
+      <label for="vaccineName">Vaccine Name</label>
+      <input id="vaccineName" formControlName="vaccineName" class="form-control" placeholder="Enter vaccine name" required />
+    </div>
+
+    <div class="form-group">
+      <label for="driveId">Drive ID</label>
+      <input id="driveId" formControlName="driveId" class="form-control" placeholder="Enter drive ID" required />
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary" [disabled]="!vaccinationForm.valid || isVaccinated">Mark Vaccinated</button>
+  </form>
+
+  <hr />
+
+  <!-- Vaccination History -->
+  <h3>Vaccination History</h3>
+  <div *ngIf="vaccinationRecords.length === 0" class="alert alert-info">
+    No vaccination records found for this student.
+  </div>
+
+  <table class="table" *ngIf="vaccinationRecords.length > 0">
+    <thead>
+      <tr>
+        <th>Vaccine Name</th>
+        <th>Drive ID</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let record of vaccinationRecords">
+        <td>{{ record.vaccineName }}</td>
+        <td>{{ record.driveId }}</td>
+        <td>{{ record.vaccinationDate | date:'short' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

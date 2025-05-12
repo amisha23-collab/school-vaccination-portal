@@ -1,0 +1,37 @@
+.container {
+  margin-top: 20px;
+}
+
+.loading {
+  margin-bottom: 15px;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.alert {
+  margin-bottom: 15px;
+}
+
+.table {
+  margin-top: 15px;
+}
+
+.btn-primary {
+  margin-right: 5px;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+.add-vaccine{
+  padding: 10px;
+  text-align: center;
+  margin-left: 45%;
+  margin-top: 3%;
+}

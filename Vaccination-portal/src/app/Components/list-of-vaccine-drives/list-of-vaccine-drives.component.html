@@ -1,0 +1,43 @@
+ <a mat-list-item (click)="back()"class="btn btn-secondary" style="padding:5px 20px;margin:1%">Go Back</a>
+<div class="container">
+  <h2>Vaccination Drives</h2>
+
+  <div *ngIf="loading" class="loading">
+    Loading drives, please wait...
+  </div>
+
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+
+  <div *ngIf="vaccinationDrives.length === 0 && !loading && !errorMessage">
+    No vaccination drives available.
+  </div>
+
+  <table class="table table-striped" *ngIf="vaccinationDrives.length > 0 && !loading">
+    <thead>
+      <tr>
+        <th>Vaccine Name</th>
+        <th>Date</th>
+        <th>Available Doses</th>
+        <th>Applicable Classes</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let drive of vaccinationDrives">
+        <td>{{ drive.vaccineName }}</td>
+        <td>{{ drive.date }}</td>
+        <td>{{ drive.availableDoses }}</td>
+        <td>{{ formatApplicableClasses(drive.applicableClasses) }}</td>
+        <td>{{ drive.status }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="editDrive(drive.id)">Edit</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<button class="btn btn-success mb-3 add-vaccine" (click)="addVaccineDrive()">Add Vaccine Drive</button>

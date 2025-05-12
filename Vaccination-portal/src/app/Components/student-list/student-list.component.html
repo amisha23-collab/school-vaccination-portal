@@ -1,0 +1,55 @@
+<!-- src/app/components/student-list/student-list.component.html -->
+<a mat-list-item (click)="back()"class="btn btn-secondary" style="padding:5px 20px;margin:1%">Go Back</a>
+<div class="container">
+  <h2>Student List</h2>
+  <div class="actions">
+    <input type="text" placeholder="Search by Name" [(ngModel)]="searchName" (input)="searchByName()" />
+    <input type="text" placeholder="Search by Class" [(ngModel)]="searchClass" (input)="searchByClass()" />
+    <input type="text" placeholder="Search by Student ID" [(ngModel)]="searchStudentId" (input)="searchByStudentId()" />
+    <select [(ngModel)]="searchStatus" (change)="filterByStatus()">
+      <option value="">All Statuses</option>
+      <option value="Done">Vaccinated</option>
+      <option value="Pending">Not Vaccinated</option>
+    </select>
+    <button (click)="addStudent()" class="btn btn-primary">Add New Student</button>
+
+    <!-- src/app/components/student-list/student-list.component.html -->
+     <button mat-button (click)="openImportDialog()" class="btn btn-primary">Import Student</button>
+     <button (click)="exportStudents()" class="btn btn-primary">Export Students</button>
+
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Student ID</th>
+        <th>Name</th>
+        <th>Class</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students">
+        <td>{{ student.id }}</td>
+        <td>{{ student.studentId }}</td>
+        <td>{{ student.name }}</td>
+        <td>{{ student.className }}</td>
+        <td>{{ student.vaccinatedStatus }}</td>
+        <td>
+  <button  (click)="openVaccinationDialog(student.studentId)" class="btn btn-info add-btn" style="margin-right: 40px;padding: 5px 20px;">
+  Vaccination Details
+</button>
+
+ <button (click)="editStudent(student)" class="btn btn-warning">
+  Edit
+</button>
+
+  <button (click)="deleteStudent(student.id)" class="btn btn-danger" style="padding-left: 20px;padding: 5px 20px;">
+    Delete
+  </button>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

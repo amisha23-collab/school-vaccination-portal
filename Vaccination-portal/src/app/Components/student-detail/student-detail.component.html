@@ -1,0 +1,33 @@
+<!-- src/app/components/student-detail/student-detail.component.html
+<div class="detail-container">
+    <h2>Student Details</h2>
+    
+    <div class="student-info">
+      <p><strong>Student ID:</strong> {{ student?.studentId }}</p>
+      <p><strong>Name:</strong> {{ student?.name }}</p>
+      <p><strong>Class:</strong> {{ student?.className }}</p>
+      <p><strong>Status:</strong> {{ student?.vaccinatedStatus }}</p>
+    </div>
+    
+    <h3>Vaccination Records</h3>
+    <table class="record-table" *ngIf="vaccinationRecords.length > 0">
+      <thead>
+        <tr>
+          <th>Vaccine Name</th>
+          <th>Drive ID</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let record of vaccinationRecords">
+          <td>{{ record.vaccineName }}</td>
+          <td>{{ record.driveId }}</td>
+          <td>{{ record.vaccinationDate }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <p *ngIf="vaccinationRecords.length === 0">No vaccination records found.</p>
+    
+    <button class="btn btn-secondary" (click)="back()">Back to List</button>
+  </div>
+   -->
